@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="content_wrapper" id="app">
+    <div v-if="infos.city">
+        <h1>
+            Weather
+            <div class="date"></div>
+        </h1>
+
+        <form class='', method="get">
+            <label name="city">Enter City:</label>
+            <input type="text" id="city" name="city"><br><br>
+            
+            <input type="submit" value="Submit">
+          </form>
+
+          <br>
+
+
+        <div class="weather_card">
+            <div class="weather_card_img" :style="{backgroundImage: weatherImg}">
+                <div class="weather_card_state">
+                    <span class="material-icons">
+                        
+                    </span>
+                </div>
+            </div>
+
+            <div class="weather_card_infos">
+                <div class="weather_card_infos_title">
+                </div>
+                <div class="weather_card_infos_temp">
+                    {{resp.celcious_tempreture}}°C /  {{resp.kelvin_tempreture}}°F
+                </div>
+                <div class="bottom">
+                    <hr>
+                    <div class="weather_card_infos_bottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
